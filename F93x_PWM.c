@@ -45,74 +45,17 @@
 
 #include <compiler_defs.h>
 #include <C8051F930_defs.h>            // SFR declaration
-
+#include "sound.h"
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
 
 #define SYSCLK       24500000          // Internal oscillator frequency in Hz
-
+SBIT (LED, SFR_P1, 6);
+unsigned int g_wait = 0;
 //-----------------------------------------------------------------------------
 // Function Prototypes
 //-----------------------------------------------------------------------------
-
-void OSCILLATOR_Init (void);
-void PORT_Init (void);
-void PCA0_Init (void);
-
-//-----------------------------------------------------------------------------
-// main() Routine
-//-----------------------------------------------------------------------------
-
-void main (void)
-{
-   unsigned int delay_count;           // Used to implement a delay
-   bit duty_direction = 0;             // 0 = Decrease; 1 = Increase
-
-   PCA0MD = 0x00;                      // Disable watchdog timer
-
-   PORT_Init ();                       // Initialize crossbar and GPIO
-   OSCILLATOR_Init ();                 // Initialize oscillator
-   PCA0_Init ();                       // Initialize PCA0
-
-   while (1)
-   {
-      // Wait a little while
-      for (delay_count = 30000; delay_count > 0; delay_count--);
-
-      if (duty_direction == 1)         // Direction = Increase
-      {
-         // First, check the ECOM0 bit
-         if ((PCA0CPM0 & 0x40) == 0x00)
-         {
-            PCA0CPM0 |= 0x40;          // Set ECOM0 if it is '0'
-         }
-         else                          // Increase duty cycle otherwise
-         {
-            PCA0CPH0--;                // Increase duty cycle
-
-            if (PCA0CPH0 == 0x00)
-            {
-               duty_direction = 0;     // Change direction for next time
-            }
-         }
-      }
-      else                             // Direction = Decrease
-      {
-         if (PCA0CPH0 == 0xFF)
-         {
-            PCA0CPM0 &= ~0x40;         // Clear ECOM0
-            duty_direction = 1;        // Change direction for next time
-         }
-         else
-         {
-            PCA0CPH0++;                // Decrease duty cycle
-         }
-      }
-
-   };
-}
-
 
 //-----------------------------------------------------------------------------
 // Initialization Subroutines
@@ -152,16 +95,17 @@ void OSCILLATOR_Init (void)
 //
 // This function configures the crossbar and GPIO ports.
 //
-// P0.0   digital   push-pull     PCA0 CEX0
+// P0.0/1   digital   push-pull     PCA0 CEX0/1
 //
 //-----------------------------------------------------------------------------
 void PORT_Init (void)
 {
    XBR0    = 0x00;
-   XBR1    = 0x01;                     // Route CEX0 to P0.0,
+   XBR1    = 0x02;                     // Route CEX0 to P0.0, CEX1 to P0.1
    XBR2    = 0x40;                     // Enable crossbar and weak pull-ups
 
-   P0MDOUT |= 0x01;                    // Set CEX0 (P0.0) to push-pull
+   P0MDOUT |= 0x03;                    // Set CEX0/1 (P0.0/1) to push-pull
+   P1MDOUT = 0x40;                     // Set LED
 }
 
 //-----------------------------------------------------------------------------
@@ -219,18 +163,109 @@ void PORT_Init (void)
 //-----------------------------------------------------------------------------
 void PCA0_Init (void)
 {
-   // Configure PCA time base; overflow interrupt disabled
-   PCA0CN = 0x00;                      // Stop counter; clear all flags
-   PCA0MD = 0x08;                      // Use SYSCLK as time base
+   /* Stop counter; clear all flags */
+   PCA0CN = 0x00;                      
+   /* Enable PCA counter*/
+   PCA0CN    = 0x40;
+   /* Use SYSCLK as time base */
+   PCA0MD    = 0x08;
+   /* Module 0,1 Comparator Function and Pulse Width Modulation Mode Enable */
+   PCA0CPM0  = 0x42;
+   PCA0CPM1  = 0x42;
+   /* Cycle length 9 bit */
+   // PCA0PWM   = 0x01; 
 
-   PCA0CPM0 = 0x42;                    // Module 0 = 8-bit PWM mode
 
-   // Configure initial PWM duty cycle = 50%
-   PCA0CPH0 = 256 - (256 * 0.5);
-
-   // Start PCA counter
-   CR = 1;
+   /* Configure initial PWM duty cycle = 50% */
+   // PCA0PWM   |= 0x80;           // ARSEL = 1
+   // PCA0CPL0  = 0x00;
+   // PCA0CPH0  = 0x01;
+   // PCA0CPL1  = 0x00;
+   // PCA0CPH1  = 0x01;
+   // PCA0PWM   &= ~0x80;          // ARSEL = 0
+   
 }
+
+void Timer0_Init(void)
+{
+   TH0 = 256 - (SYSCLK / 48 / 8000) ;           // Init Timer0 High register
+   TL0 = TH0;                          // Set the intial Timer0 value
+
+   TMOD = 0x02;                        // Timer0 in 8-bit reload mode
+   CKCON = 0x02;                       // Timer0 uses a 1:48 prescaler
+   ET0 = 1;                              // Timer0 interrupt enabled
+   TCON = 0x10;                        // Timer0 ON
+}
+
+
+INTERRUPT (TIMER0_ISR, INTERRUPT_TIMER0)
+{
+   if (g_wait) g_wait--;
+   LED = !LED;                     
+}
+
+void fun_test()
+{
+   unsigned int delay_count;           // Used to implement a delay
+   unsigned short pwm_value = 0x80;     // initial value 
+   bit duty_direction = 0;             // 0 = Decrease; 1 = Increase
+   while (1)
+   {
+      // Wait a little while
+      for (delay_count = 30000; delay_count > 0; delay_count--);
+
+      PCA0CPH0  = pwm_value;
+      PCA0CPH1  = (0xFF - pwm_value);
+   
+      if (duty_direction == 1) {
+         pwm_value--;
+         if (pwm_value == 0) {
+            duty_direction = 0;
+         }
+      }else{
+         pwm_value++;
+         if (pwm_value == 0xFF) {
+            duty_direction = 1;
+         }
+      }
+   }
+}
+
+void pcm_test()
+{
+   int i;
+   unsigned short pwm_value;
+   while(1){
+      for(i = 0; i < PCM_SIZE; i++){
+         pwm_value = sounddata[i];
+         PCA0CPH0  = pwm_value;
+         PCA0CPH1  = (0xFF - pwm_value);
+         g_wait = 1;
+         while(g_wait);
+      }
+      g_wait = 8000;
+      while(g_wait);
+   }
+}
+
+
+// main() Routine
+//-----------------------------------------------------------------------------
+
+void main (void)
+{
+
+   PCA0MD = 0x00;                      // Disable watchdog timer
+   Timer0_Init (); 
+   PORT_Init ();                       // Initialize crossbar and GPIO
+   OSCILLATOR_Init ();                 // Initialize oscillator
+   PCA0_Init ();                       // Initialize PCA0
+   EA = 1;                             // Enable global interrupts
+   // fun_test();
+   pcm_test();
+   while(1);
+}
+
 
 //-----------------------------------------------------------------------------
 // End Of File

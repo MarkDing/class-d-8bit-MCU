@@ -1,0 +1,449 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"wait",
+				"g_wait"
+			],
+			[
+				"pc1",
+				"PCA0CPH1"
+			],
+			[
+				"pca",
+				"PCA0CPH1"
+			],
+			[
+				"pc",
+				"PCA0CPH0"
+			],
+			[
+				"duty",
+				"duty_direction"
+			],
+			[
+				"PCA0CPH",
+				"PCA0CPH1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "F93x_PWM.c",
+			"settings":
+			{
+				"buffer_size": 9072,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "alarm.h",
+			"settings":
+			{
+				"buffer_size": 5041,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sound.h",
+			"settings":
+			{
+				"buffer_size": 170,
+				"line_ending": "Windows",
+				"name": "#ifndef __SOUND_H__"
+			}
+		},
+		{
+			"file": "ok.h",
+			"settings":
+			{
+				"buffer_size": 15035,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "doorbell.h",
+			"settings":
+			{
+				"buffer_size": 79647,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 189.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/stuffs/ok.c",
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/stuffs/doorbell-1.c",
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/ok.h",
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/sounddata.h",
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/C8051F930_defs.h",
+		"/C/Users/mading/Dropbox/work/GitHub/class-d-8bit-MCU/.gitignore",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/class_d.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/main.c",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_TIMER_A_Type.h",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/mulaw.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myTIMER1.c",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_EPCACH_A_Type.h",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myApplication.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myDataPlaneIn.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/generated/gEPCA0.c",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_EPCA_A_Type.h",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_EPCA_A_Registers.h",
+		"/C/Users/mading/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_SARADC_A_Type.h",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myUSB0.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myCAPSENSE0.c",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_PLL_A_Type.h",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/sim3u1xx/SI32_PBCFG_A_Type.h",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/CPU/core_cm3.h",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/sim3c1xx/sim3c1xx.h",
+		"/C/Users/mading/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Silabs/32bit/si32-1.1.1/si32Hal/SI32_Modules/SI32_TIMER_A_Type.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myEPCA0.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/generated/gPLL0.c",
+		"/C/Users/mading/Dropbox/work/GitHub/pwm-audio-drive/reference/Class-D_TS_SiM3U164/src/myCLKCTRL.c"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"",
+			"C:\\Users\\mading\\Dropbox\\work\\GitHub\\pwm-audio-drive\\reference\\Class-D_TS_SiM3U164",
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"SFR_PCA0CN",
+			"PCA0CPL0",
+			"PCA0CPM0",
+			"SFR_PCA0",
+			"SFR_PCA0CPM",
+			"PCA0CPM0",
+			"pca",
+			"SI32_EPCA",
+			"muLaw_Decode",
+			"compressed_data",
+			"MULAW_BIAS",
+			"input_data",
+			"system_mode",
+			"tags",
+			"ctags",
+			"NVIC_EnableIRQ",
+			"nvic",
+			"SI32_TIMER_A_enable_stall_in_debug_mode",
+			"myApplication_main",
+			"si32Base_allocation_summary",
+			"SI32_MCU_RAM_SIZE",
+			"printf",
+			"print",
+			"NVIC_ClearPendingIRQ",
+			"NVIC",
+			" + i ",
+			" +df",
+			"Switch_LEDs",
+			"decoded"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "F93x_PWM.c",
+					"settings":
+					{
+						"buffer_size": 9072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6809,
+								6809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3825.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "alarm.h",
+					"settings":
+					{
+						"buffer_size": 5041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"word_wrap": true,
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "sound.h",
+					"settings":
+					{
+						"buffer_size": 170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								170,
+								170
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#ifndef __SOUND_H__",
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ok.h",
+					"settings":
+					{
+						"buffer_size": 15035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								632,
+								632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "doorbell.h",
+					"settings":
+					{
+						"buffer_size": 79647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79635,
+								79635
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11032.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ok",
+				"ok.h"
+			],
+			[
+				"ok.h",
+				"ok.h"
+			],
+			[
+				"ok.",
+				"ok.h"
+			],
+			[
+				"epca",
+				"Class-D_TS_SiM3U164/src/generated/gEPCA0.c"
+			],
+			[
+				"myap",
+				"Class-D_TS_SiM3U164/src/myApplication.c"
+			],
+			[
+				"ulaw",
+				"Class-D_TS_SiM3U164/src/mulaw.c"
+			],
+			[
+				"myappli",
+				"Class-D_TS_SiM3U164/src/myApplication.c"
+			],
+			[
+				"epc",
+				"src/myEPCA0.c"
+			],
+			[
+				"pll",
+				"src/generated/gPLL0.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true
+}
