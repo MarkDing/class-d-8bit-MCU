@@ -51,7 +51,7 @@
 			"file": "sound.h",
 			"settings":
 			{
-				"buffer_size": 170,
+				"buffer_size": 168,
 				"line_ending": "Windows",
 				"name": "#ifndef __SOUND_H__"
 			}
@@ -217,8 +217,8 @@
 						"selection":
 						[
 							[
-								6809,
-								6809
+								8082,
+								8082
 							]
 						],
 						"settings":
@@ -228,7 +228,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3825.0,
+						"translation.y": 1710.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -253,6 +253,7 @@
 						{
 							"auto_name": "",
 							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false,
 							"word_wrap": true,
 							"wrap_width": 100
 						},
@@ -267,15 +268,15 @@
 					"file": "sound.h",
 					"settings":
 					{
-						"buffer_size": 170,
+						"buffer_size": 168,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								170,
-								170
+								168,
+								168
 							]
 						],
 						"settings":
@@ -337,6 +338,7 @@
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
