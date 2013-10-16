@@ -1,0 +1,38 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\class-d reference design.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\class-d reference design.dsn")
+      (Path "Design Resources" ".\class-d reference design.dsn" "SCHEMATIC1")
+      (Select "Design Resources" ".\class-d reference design.dsn" "SCHEMATIC1"
+         "SPEAKER_OUTPUTS"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 304 0 657"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -30 75 1711 75 536")
+        (Scroll "0 282")
+        (Zoom "128")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\MADING\DROPBOX\WORK\GITHUB\CLASS-D-8BIT-MCU\SCH\CLASS-D REFERENCE DESIGN.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "SPEAKER_OUTPUTS")))
+  (MPSSessionName "mading"))

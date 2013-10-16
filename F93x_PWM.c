@@ -188,12 +188,12 @@ void PCA0_Init (void)
 
 void Timer0_Init(void)
 {
-   TH0 = 256 - (SYSCLK / 48 / 8000) ;           // Init Timer0 High register
+   TH0 = 256 - (SYSCLK / 48 / 8000) ;  // Init Timer0 High register
    TL0 = TH0;                          // Set the intial Timer0 value
 
    TMOD = 0x02;                        // Timer0 in 8-bit reload mode
    CKCON = 0x02;                       // Timer0 uses a 1:48 prescaler
-   ET0 = 1;                              // Timer0 interrupt enabled
+   ET0 = 1;                            // Timer0 interrupt enabled
    TCON = 0x10;                        // Timer0 ON
 }
 
@@ -203,6 +203,7 @@ INTERRUPT (TIMER0_ISR, INTERRUPT_TIMER0)
    if (g_wait) g_wait--;
    LED = !LED;                     
 }
+
 
 void fun_test()
 {
